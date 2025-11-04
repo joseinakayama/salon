@@ -146,7 +146,7 @@ const animateElements = document.querySelectorAll(`
 // 初期状態を設定してオブザーバーに登録
 animateElements.forEach((element, index) => {
     // 既にopacity: 0がHTMLに設定されているため、transition だけ追加
-    element.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    element.style.transition = `all 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
     observer.observe(element);
 });
 
