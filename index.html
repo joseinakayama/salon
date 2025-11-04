@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="リンパマッサージサロン - 溜め込んだ疲れ、流しませんか？巡るカラダで、明日を軽やかに。">
+    <title>リンパマッサージサロン | 巡るカラダで、明日を軽やかに</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        base: '#F8F6F2',
+                        light: '#FDFCFA',
+                        main: '#8A9A5B',
+                        sub: '#D4BBA4',
+                        accent: '#E6A47E',
+                        text: '#4D4D4D',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                        serif: ['Noto Serif JP', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-text bg-base">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 bg-base/95 backdrop-blur-md shadow-md z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-4 md:px-8">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center gap-2 text-xl font-semibold text-main">
+                    <i class="fas fa-spa text-2xl"></i>
+                    <span>Lymph Care Salon</span>
+                </div>
+                <ul class="hidden md:flex gap-8 items-center">
+                    <li><a href="#about" class="font-medium text-sm hover:text-main transition-colors relative nav-link">特徴</a></li>
+                    <li><a href="#menu" class="font-medium text-sm hover:text-main transition-colors relative nav-link">メニュー</a></li>
+                    <li><a href="#voice" class="font-medium text-sm hover:text-main transition-colors relative nav-link">お客様の声</a></li>
+                    <li><a href="#access" class="font-medium text-sm hover:text-main transition-colors relative nav-link">アクセス</a></li>
+                    <li><a href="#contact" class="bg-accent text-white px-6 py-2 rounded-full font-medium hover:bg-accent/90 hover:-translate-y-0.5 hover:shadow-lg transition-all">ご予約</a></li>
+                </ul>
+                <button class="md:hidden flex flex-col gap-1.5 p-2" id="hamburger" aria-label="メニュー" aria-expanded="false">
+                    <span class="block w-6 h-0.5 bg-main transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-main transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-main transition-all duration-300"></span>
+                </button>
+            </nav>
+            <!-- Mobile Menu -->
+            <ul class="md:hidden flex-col gap-4 items-start py-6 bg-white rounded-lg shadow-lg hidden" id="mobile-menu">
+                <li><a href="#about" class="block font-medium text-sm hover:text-main transition-colors mobile-link">特徴</a></li>
+                <li><a href="#menu" class="block font-medium text-sm hover:text-main transition-colors mobile-link">メニュー</a></li>
+                <li><a href="#voice" class="block font-medium text-sm hover:text-main transition-colors mobile-link">お客様の声</a></li>
+                <li><a href="#access" class="block font-medium text-sm hover:text-main transition-colors mobile-link">アクセス</a></li>
+                <li><a href="#contact" class="block bg-accent text-white px-6 py-2 rounded-full font-medium text-center mobile-link">ご予約</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 bg-gradient-to-br from-light to-base overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br from-main/5 to-transparent z-0"></div>
+        
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <div class="max-w-2xl animate-fade-in-up">
+                <div class="inline-block bg-white text-main px-6 py-2 rounded-full text-sm font-medium mb-6 shadow-sm">
+                    完全個室のプライベートサロン
+                </div>
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-main leading-tight mb-4 animate-fade-in-up">
+                    溜め込んだ疲れ、<br>
+                    流しませんか？
+                </h1>
+                <p class="text-2xl md:text-3xl text-text font-light mb-8 animate-fade-in-up">
+                    巡るカラダで、明日を軽やかに。
+                </p>
+                <div class="flex flex-wrap gap-6 mb-8 animate-fade-in-up">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt text-main text-lg"></i>
+                        <span class="text-sm">〇〇駅徒歩3分</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-lock text-main text-lg"></i>
+                        <span class="text-sm">完全個室</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-leaf text-main text-lg"></i>
+                        <span class="text-sm">オーガニックオイル使用</span>
+                    </div>
+                </div>
+                <a href="#contact" class="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:bg-accent/90 hover:-translate-y-1 hover:shadow-xl transition-all animate-fade-in-up">
+                    <i class="fas fa-calendar-check"></i>
+                    ご予約・お問い合わせ
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute right-[5%] top-1/2 -translate-y-1/2 w-[45%] aspect-square hidden lg:block z-0">
+            <div class="w-full h-full bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center text-white opacity-10 shadow-2xl">
+                <i class="fas fa-spa text-[8rem]"></i>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-main text-sm font-medium animate-bounce-slow">
+            <span>Scroll</span>
+            <div class="w-px h-10 bg-gradient-to-b from-main to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="py-20 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="font-serif text-4xl md:text-5xl font-semibold text-main text-center mb-12">
+                こんなお悩み、ありませんか？
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+                <div class="bg-light p-6 md:p-8 rounded-2xl text-center hover:border-main hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border-2 border-transparent problem-item opacity-0">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                        <i class="fas fa-shoe-prints text-2xl md:text-3xl"></i>
+                    </div>
+                    <p class="md:text-lg font-semibold leading-relaxed text-text">夕方になると<br>足がパンパン</p>
+                </div>
+                <div class="bg-light p-6 md:p-8 rounded-2xl text-center hover:border-main hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border-2 border-transparent problem-item opacity-0">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                        <i class="fas fa-tired text-2xl md:text-3xl"></i>
+                    </div>
+                    <p class="md:text-lg font-semibold leading-relaxed text-text">何をしても<br>疲れが取れない</p>
+                </div>
+                <div class="bg-light p-6 md:p-8 rounded-2xl text-center hover:border-main hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border-2 border-transparent problem-item opacity-0">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                        <i class="fas fa-snowflake text-2xl md:text-3xl"></i>
+                    </div>
+                    <p class="md:text-lg font-semibold leading-relaxed text-text">手足の冷えが<br>つらい</p>
+                </div>
+                <div class="bg-light p-6 md:p-8 rounded-2xl text-center hover:border-main hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border-2 border-transparent problem-item opacity-0">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                        <i class="fas fa-user text-2xl md:text-3xl"></i>
+                    </div>
+                    <p class="md:text-lg font-semibold leading-relaxed text-text">顔のくすみが<br>気になる</p>
+                </div>
+                <div class="bg-light p-6 md:p-8 rounded-2xl text-center hover:border-main hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border-2 border-transparent problem-item opacity-0">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                        <i class="fas fa-battery-quarter text-2xl md:text-3xl"></i>
+                    </div>
+                    <p class="md:text-lg font-semibold leading-relaxed text-text">慢性的な<br>だるさがある</p>
+                </div>
+                <div class="bg-light p-6 md:p-8 rounded-2xl text-center hover:border-main hover:-translate-y-2 hover:shadow-xl transition-all duration-300 border-2 border-transparent problem-item opacity-0">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                        <i class="fas fa-weight text-2xl md:text-3xl"></i>
+                    </div>
+                    <p class="md:text-lg font-semibold leading-relaxed text-text">体が重く<br>スッキリしない</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-20 md:py-24 bg-base">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="font-serif text-4xl md:text-5xl font-semibold text-main text-center mb-6 leading-snug">
+                その不調、リンパの滞りが<br>原因かもしれません。
+            </h2>
+            <p class="text-center text-lg max-w-3xl mx-auto mb-16 leading-relaxed">
+                リンパの流れが滞ると、老廃物が体内に蓄積し、むくみや疲労、冷えなどの不調を引き起こします。<br>
+                当サロンの施術で、リンパの流れを整え、本来の健やかなカラダを取り戻しましょう。
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl text-center shadow-md hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 benefit-item opacity-0">
+                    <div class="w-24 h-24 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                        <i class="fas fa-water text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-main mb-4">むくみ改善</h3>
+                    <p class="leading-relaxed">リンパの流れを促進し、体内の余分な水分や老廃物を排出。すっきりとした軽やかな体へ。</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl text-center shadow-md hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 benefit-item opacity-0">
+                    <div class="w-24 h-24 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                        <i class="fas fa-heart text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-main mb-4">疲労回復</h3>
+                    <p class="leading-relaxed">深いリラクゼーションと血行促進により、蓄積した疲労を根本から改善します。</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl text-center shadow-md hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 benefit-item opacity-0">
+                    <div class="w-24 h-24 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                        <i class="fas fa-smile text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-main mb-4">リラックス効果</h3>
+                    <p class="leading-relaxed">心地よい施術空間で、心身ともに深くリラックス。自律神経を整えます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 md:py-24 bg-white" id="about">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="font-serif text-4xl md:text-5xl font-semibold text-main text-center mb-16">
+                選ばれる3つの理由
+            </h2>
+            <div class="max-w-5xl mx-auto space-y-16">
+                <!-- Feature 1 -->
+                <div class="feature-item opacity-0">
+                    <div class="inline-block bg-gradient-to-r from-main to-sub text-white px-6 py-2 rounded-full font-semibold text-sm mb-6">
+                        Point 1
+                    </div>
+                    <div class="grid md:grid-cols-5 gap-8 items-center bg-light p-8 rounded-2xl">
+                        <div class="md:col-span-2 aspect-[4/3] rounded-xl overflow-hidden">
+                            <div class="w-full h-full bg-gradient-to-br from-main to-sub flex items-center justify-center text-white opacity-30">
+                                <i class="fas fa-hands text-6xl"></i>
+                            </div>
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-main mb-4 leading-snug">
+                                経験豊富なセラピストによる<br>オーダーメイド施術
+                            </h3>
+                            <p class="leading-relaxed">
+                                お一人おひとりの体調やお悩みに合わせて、最適な施術をご提案。10年以上の経験を持つセラピストが、丁寧にカウンセリングを行い、あなただけの施術プランを作成します。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-item opacity-0">
+                    <div class="inline-block bg-gradient-to-r from-main to-sub text-white px-6 py-2 rounded-full font-semibold text-sm mb-6">
+                        Point 2
+                    </div>
+                    <div class="grid md:grid-cols-5 gap-8 items-center bg-light p-8 rounded-2xl">
+                        <div class="md:col-span-3 order-2 md:order-1">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-main mb-4 leading-snug">
+                                心から寛げる<br>完全個室のプライベート空間
+                            </h3>
+                            <p class="leading-relaxed">
+                                他のお客様の目を気にすることなく、ゆったりとお過ごしいただける完全個室をご用意。自然光が差し込む明るく清潔な空間で、極上のリラックスタイムをお楽しみください。
+                            </p>
+                        </div>
+                        <div class="md:col-span-2 aspect-[4/3] rounded-xl overflow-hidden order-1 md:order-2">
+                            <div class="w-full h-full bg-gradient-to-br from-main to-sub flex items-center justify-center text-white opacity-30">
+                                <i class="fas fa-door-closed text-6xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-item opacity-0">
+                    <div class="inline-block bg-gradient-to-r from-main to-sub text-white px-6 py-2 rounded-full font-semibold text-sm mb-6">
+                        Point 3
+                    </div>
+                    <div class="grid md:grid-cols-5 gap-8 items-center bg-light p-8 rounded-2xl">
+                        <div class="md:col-span-2 aspect-[4/3] rounded-xl overflow-hidden">
+                            <div class="w-full h-full bg-gradient-to-br from-main to-sub flex items-center justify-center text-white opacity-30">
+                                <i class="fas fa-leaf text-6xl"></i>
+                            </div>
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-main mb-4 leading-snug">
+                                肌に優しい<br>高品質オーガニックオイル
+                            </h3>
+                            <p class="leading-relaxed">
+                                敏感肌の方にも安心してご利用いただける、厳選したオーガニックオイルを使用。天然由来の成分が肌に優しく浸透し、施術効果を高めます。香りにもこだわり、心身ともに癒されます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="py-20 md:py-24 bg-base" id="menu">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="font-serif text-4xl md:text-5xl font-semibold text-main text-center mb-4">
+                おすすめメニュー
+            </h2>
+            <p class="text-center text-lg mb-16">初めての方におすすめの体験メニューをご用意しております</p>
+            
+            <div class="max-w-6xl mx-auto space-y-8">
+                <!-- Featured Menu -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 menu-item opacity-0">
+                    <div class="grid md:grid-cols-5 gap-0">
+                        <div class="md:col-span-2 relative aspect-[4/3] md:aspect-auto">
+                            <div class="absolute top-4 left-4 bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold shadow-md z-10">
+                                初回限定
+                            </div>
+                            <div class="w-full h-full bg-gradient-to-br from-main to-sub flex items-center justify-center text-white opacity-30">
+                                <i class="fas fa-spa text-6xl"></i>
+                            </div>
+                        </div>
+                        <div class="md:col-span-3 p-8">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-main mb-4">
+                                全身リンパマッサージ<br>体験コース
+                            </h3>
+                            <p class="mb-6 leading-relaxed">
+                                足先から頭部まで、全身のリンパを丁寧に流していきます。初めての方にも安心してお試しいただける、当サロン人気No.1のコースです。
+                            </p>
+                            <div class="flex items-center gap-2 mb-4">
+                                <i class="fas fa-clock text-main"></i>
+                                <span class="font-medium">90分</span>
+                            </div>
+                            <div class="mb-6">
+                                <div class="text-sm text-gray-400 line-through mb-1">通常 ¥12,000</div>
+                                <div class="flex items-baseline gap-3">
+                                    <span class="text-sm text-accent font-semibold">初回特別価格</span>
+                                    <span class="font-serif text-4xl font-bold text-accent">¥8,800</span>
+                                </div>
+                            </div>
+                            <a href="#contact" class="block text-center bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-accent/90 hover:-translate-y-1 transition-all">
+                                このメニューを予約する
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Menus -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 menu-item opacity-0">
+                        <div class="aspect-[4/3]">
+                            <div class="w-full h-full bg-gradient-to-br from-main to-sub flex items-center justify-center text-white opacity-30">
+                                <i class="fas fa-user text-6xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-semibold text-main mb-3">
+                                フェイシャルリンパ<br>ケアコース
+                            </h3>
+                            <p class="mb-4 text-sm leading-relaxed">
+                                顔と首、デコルテを中心にリンパを流し、くすみやむくみを改善。お顔のトーンアップと小顔効果が期待できます。
+                            </p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fas fa-clock text-main text-sm"></i>
+                                <span class="text-sm font-medium">60分</span>
+                            </div>
+                            <div class="mb-4">
+                                <span class="font-serif text-3xl font-bold text-accent">¥9,500</span>
+                            </div>
+                            <a href="#contact" class="block text-center bg-transparent text-main border-2 border-main px-6 py-2 rounded-full font-semibold hover:bg-main hover:text-white hover:-translate-y-1 transition-all">
+                                このメニューを予約する
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 menu-item opacity-0">
+                        <div class="aspect-[4/3]">
+                            <div class="w-full h-full bg-gradient-to-br from-main to-sub flex items-center justify-center text-white opacity-30">
+                                <i class="fas fa-shoe-prints text-6xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-semibold text-main mb-3">
+                                下半身集中<br>リンパケアコース
+                            </h3>
+                            <p class="mb-4 text-sm leading-relaxed">
+                                むくみやすい脚を中心に、腰から足先まで丁寧にケア。立ち仕事やデスクワークで疲れた脚を軽やかに。
+                            </p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fas fa-clock text-main text-sm"></i>
+                                <span class="text-sm font-medium">60分</span>
+                            </div>
+                            <div class="mb-4">
+                                <span class="font-serif text-3xl font-bold text-accent">¥8,000</span>
+                            </div>
+                            <a href="#contact" class="block text-center bg-transparent text-main border-2 border-main px-6 py-2 rounded-full font-semibold hover:bg-main hover:text-white hover:-translate-y-1 transition-all">
+                                このメニューを予約する
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 md:py-24 bg-white" id="voice">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="font-serif text-4xl md:text-5xl font-semibold text-main text-center mb-16">
+                お客様の声
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-light p-8 rounded-2xl shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 testimonial-item opacity-0">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center text-white flex-shrink-0">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-lg text-main">Y.K様</div>
+                            <div class="text-sm text-gray-500">40代女性</div>
+                        </div>
+                    </div>
+                    <div class="inline-block text-xs text-main bg-white px-3 py-1 rounded mb-3">
+                        お悩み：むくみ、冷え性
+                    </div>
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        長年悩んでいた足のむくみが、1回の施術でこんなにスッキリするとは驚きました。セラピストの方の丁寧なカウンセリングと優しい施術に、心も体も癒されました。完全個室なのでリラックスできて、施術中は眠ってしまうほど気持ちよかったです。
+                    </p>
+                </div>
+                
+                <div class="bg-light p-8 rounded-2xl shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 testimonial-item opacity-0">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center text-white flex-shrink-0">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-lg text-main">M.T様</div>
+                            <div class="text-sm text-gray-500">30代女性</div>
+                        </div>
+                    </div>
+                    <div class="inline-block text-xs text-main bg-white px-3 py-1 rounded mb-3">
+                        お悩み：慢性疲労、肩こり
+                    </div>
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        仕事の疲れが溜まって体が重かったのですが、施術後は体が軽くなり、呼吸も楽になりました。オーガニックオイルの香りもとても良くて、サロンの雰囲気も素敵で大満足です。定期的に通いたいと思います。
+                    </p>
+                </div>
+                
+                <div class="bg-light p-8 rounded-2xl shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 testimonial-item opacity-0">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-main to-sub rounded-full flex items-center justify-center text-white flex-shrink-0">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-lg text-main">S.N様</div>
+                            <div class="text-sm text-gray-500">50代女性</div>
+                        </div>
+                    </div>
+                    <div class="inline-block text-xs text-main bg-white px-3 py-1 rounded mb-3">
+                        お悩み：顔のくすみ、たるみ
+                    </div>
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        フェイシャルコースを体験しました。施術後、鏡を見て驚き！顔のむくみが取れて、フェイスラインがスッキリしました。肌のトーンも明るくなって、友人にも「顔色が良くなったね」と言われました。また必ず伺います。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Therapist Section -->
+    <section class="py-20 md:py-24 bg-base">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="font-serif text-4xl md:text-5xl font-semibold text-main text-center mb-16">
+                セラピスト紹介
+            </h2>
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+                <div class="grid md:grid-cols-4 gap-8 items-start">
+                    <div class="md:col-span-1">
+                        <div class="aspect-square rounded-full overflow-hidden mx-auto max-w-[200px]">
+                            <div class="w-full h-full bg-gradient-to-br from-main to-sub flex items-center justify-center text-white opacity-30">
+                                <i class="fas fa-user text-6xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 text-center md:text-left">
+                        <h3 class="font-serif text-3xl font-semibold text-main mb-3">田中 美咲</h3>
+                        <div class="flex items-center gap-2 mb-6 justify-center md:justify-start">
+                            <i class="fas fa-award text-accent"></i>
+                            <span class="text-sm">セラピスト歴12年 / リンパドレナージュ国際資格保有</span>
+                        </div>
+                        <p class="leading-relaxed">
+                            はじめまして。当サロンのセラピスト、田中美咲と申します。<br><br>
+                            私自身も以前は慢性的な疲労とむくみに悩まされていました。そんな時にリンパマッサージと出会い、その効果に感動したことがこの仕事を始めたきっかけです。<br><br>
+                            お客様お一人おひとりと向き合い、お体の状態を丁寧に確認しながら、最適な施術をご提供することを大切にしています。完全個室のプライベート空間で、心も体もゆっくりとほぐしていただければ幸いです。<br><br>
+                            あなたの「明日を軽やかに」するお手伝いをさせてください。心よりお待ちしております。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Access Section -->
+    <section class="py-20 md:py-24 bg-white" id="access">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="font-serif text-4xl md:text-5xl font-semibold text-main text-center mb-16">
+                アクセス・店舗情報
+            </h2>
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+                <div class="rounded-2xl overflow-hidden shadow-lg">
+                    <div class="aspect-square bg-gradient-to-br from-main to-sub flex flex-col items-center justify-center text-white opacity-50 p-8 text-center">
+                        <i class="fas fa-map-marked-alt text-6xl mb-4"></i>
+                        <p class="text-2xl mb-2">Google Map</p>
+                        <small class="text-sm opacity-80">※実際の地図はGoogle Maps APIで埋め込み可能です</small>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="flex items-center gap-2 text-xl font-semibold text-main mb-2">
+                            <i class="fas fa-store text-xl"></i> 店舗名
+                        </h3>
+                        <p class="pl-8 leading-relaxed">Lymph Care Salon<br>〜リンパケアサロン〜</p>
+                    </div>
+                    <div>
+                        <h3 class="flex items-center gap-2 text-xl font-semibold text-main mb-2">
+                            <i class="fas fa-map-marker-alt text-xl"></i> 住所
+                        </h3>
+                        <p class="pl-8 leading-relaxed">〒000-0000<br>東京都〇〇区〇〇 1-2-3<br>〇〇ビル 3F</p>
+                    </div>
+                    <div>
+                        <h3 class="flex items-center gap-2 text-xl font-semibold text-main mb-2">
+                            <i class="fas fa-train text-xl"></i> アクセス
+                        </h3>
+                        <p class="pl-8 leading-relaxed">〇〇線「〇〇駅」東口より徒歩3分<br>〇〇線「〇〇駅」南口より徒歩5分</p>
+                    </div>
+                    <div>
+                        <h3 class="flex items-center gap-2 text-xl font-semibold text-main mb-2">
+                            <i class="fas fa-clock text-xl"></i> 営業時間
+                        </h3>
+                        <p class="pl-8 leading-relaxed">10:00 〜 20:00（最終受付 19:00）</p>
+                    </div>
+                    <div>
+                        <h3 class="flex items-center gap-2 text-xl font-semibold text-main mb-2">
+                            <i class="fas fa-calendar-times text-xl"></i> 定休日
+                        </h3>
+                        <p class="pl-8 leading-relaxed">毎週水曜日、第2・第4日曜日</p>
+                    </div>
+                    <div>
+                        <h3 class="flex items-center gap-2 text-xl font-semibold text-main mb-2">
+                            <i class="fas fa-phone text-xl"></i> お電話でのご予約
+                        </h3>
+                        <p class="pl-8 font-serif text-2xl font-bold text-accent mb-1">03-XXXX-XXXX</p>
+                        <p class="pl-8 text-sm text-gray-500">※施術中は電話に出られないことがございます</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 md:py-24 bg-gradient-to-br from-main to-sub text-white" id="contact">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="font-serif text-4xl md:text-5xl font-semibold text-center mb-6">
+                ご予約・お問い合わせ
+            </h2>
+            <p class="text-center text-lg mb-12 leading-relaxed">
+                初めての方も、どうぞお気軽にお問い合わせください。<br>
+                ご予約はWeb予約が便利です。
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-12">
+                <a href="#" class="inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:bg-accent/90 hover:-translate-y-1 hover:shadow-xl transition-all">
+                    <i class="fas fa-calendar-check"></i>
+                    Web予約はこちら
+                </a>
+                <a href="tel:03-XXXX-XXXX" class="inline-flex items-center justify-center gap-2 bg-white text-main px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:bg-light hover:-translate-y-1 hover:shadow-xl transition-all">
+                    <i class="fas fa-phone"></i>
+                    電話で予約する
+                </a>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center gap-8 max-w-3xl mx-auto">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-clock text-xl"></i>
+                    <p>Web予約は24時間受付中</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-xl"></i>
+                    <p>予約確認メールをお送りします</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-info-circle text-xl"></i>
+                    <p>当日予約も可能です（空き状況による）</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text text-white py-12">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8 pb-8 border-b border-white/10">
+                <div class="flex items-center gap-2 text-xl font-semibold mb-6 md:mb-0">
+                    <i class="fas fa-spa text-2xl"></i>
+                    <span>Lymph Care Salon</span>
+                </div>
+                <nav class="flex flex-col md:flex-row gap-4 md:gap-8 text-center md:text-left">
+                    <a href="#about" class="text-sm hover:text-accent transition-colors">特徴</a>
+                    <a href="#menu" class="text-sm hover:text-accent transition-colors">メニュー</a>
+                    <a href="#voice" class="text-sm hover:text-accent transition-colors">お客様の声</a>
+                    <a href="#access" class="text-sm hover:text-accent transition-colors">アクセス</a>
+                    <a href="#contact" class="text-sm hover:text-accent transition-colors">ご予約</a>
+                </nav>
+            </div>
+            <div class="text-center text-sm opacity-70">
+                <p>&copy; 2024 Lymph Care Salon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="fixed bottom-6 right-6 w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center shadow-lg hover:bg-accent/90 hover:-translate-y-1 hover:shadow-xl transition-all opacity-0 pointer-events-none" id="back-to-top" aria-label="ページトップへ戻る">
+        <i class="fas fa-arrow-up text-lg"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

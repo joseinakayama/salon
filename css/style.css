@@ -1,0 +1,392 @@
+/* ========================================
+   リンパマッサージサロン カスタムスタイル
+   Tailwind CSS補完用
+   ======================================== */
+
+/* ========================================
+   カスタムアニメーション
+   ======================================== */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce-slow {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 1s ease-in-out forwards;
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* ========================================
+   ナビゲーションリンクのアンダーライン効果
+   ======================================== */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #8A9A5B;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ========================================
+   スクロールアニメーション用クラス
+   ======================================== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   ハンバーガーメニューのアニメーション
+   ======================================== */
+#hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ========================================
+   モバイルメニューのアニメーション
+   ======================================== */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+#mobile-menu.active {
+    display: flex !important;
+    max-height: 400px;
+}
+
+/* ========================================
+   トップへ戻るボタンの表示制御
+   ======================================== */
+#back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ========================================
+   スムーズスクロール
+   ======================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========================================
+   カスタムグラデーション背景
+   ======================================== */
+.gradient-text {
+    background: linear-gradient(135deg, #8A9A5B, #D4BBA4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   セクション間のスムーズな遷移
+   ======================================== */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* ========================================
+   レスポンシブ画像
+   ======================================== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========================================
+   アクセシビリティ向上
+   ======================================== */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #8A9A5B;
+    outline-offset: 2px;
+}
+
+/* ========================================
+   カスタムスクロールバー（Webkit系ブラウザ）
+   ======================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F8F6F2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8A9A5B;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #758450;
+}
+
+/* ========================================
+   プリントスタイル
+   ======================================== */
+@media print {
+    header,
+    #back-to-top,
+    #hamburger {
+        display: none;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ========================================
+   パフォーマンス最適化
+   ======================================== */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ========================================
+   ローディング状態
+   ======================================== */
+body.loading {
+    overflow: hidden;
+}
+
+body.loaded {
+    overflow: auto;
+}
+
+/* ========================================
+   Intersection Observer用のクラス
+   ======================================== */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   ホバーエフェクトの強化
+   ======================================== */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   カード要素の影
+   ======================================== */
+.card-shadow {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.card-shadow:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   テキストの選択色
+   ======================================== */
+::selection {
+    background-color: #8A9A5B;
+    color: white;
+}
+
+::-moz-selection {
+    background-color: #8A9A5B;
+    color: white;
+}
+
+/* ========================================
+   フォーカス時のアウトライン（アクセシビリティ）
+   ======================================== */
+*:focus {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 2px solid #8A9A5B;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ========================================
+   ボタンの無効状態
+   ======================================== */
+button:disabled,
+a.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ========================================
+   スケルトンローディング（将来の拡張用）
+   ======================================== */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ========================================
+   モーダル背景（将来の拡張用）
+   ======================================== */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+/* ========================================
+   ツールチップ（将来の拡張用）
+   ======================================== */
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background-color: #4D4D4D;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-12px);
+}
+
+/* ========================================
+   バッジ（将来の拡張用）
+   ======================================== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+}
+
+.badge-primary {
+    background-color: #8A9A5B;
+    color: white;
+}
+
+.badge-secondary {
+    background-color: #E6A47E;
+    color: white;
+}
+
+/* ========================================
+   レスポンシブユーティリティ
+   ======================================== */
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none !important;
+    }
+    
+    .mobile-full-width {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .desktop-hidden {
+        display: none !important;
+    }
+}
+
+/* ========================================
+   印刷最適化
+   ======================================== */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+    }
+}
